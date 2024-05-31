@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>multi step form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="multi-select">
+      <div class="sidebar-svg">
+        <div class="svg">
+          <img
+            class="svg-mobile"
+            src="./assets/images/bg-sidebar-mobile.svg"
+            alt=""
+          />
+          <img
+            class="svg-desktop hidden"
+            src="./assets/images/bg-sidebar-desktop.svg"
+          />
+        </div>
+        <!-- number button -->
+        <div class="number-div flex">
+          <div class="number-details-flex flex">
+            <button type="button" id="number-one" class="number color-hidden">
+              1
+            </button>
+            <div class="number-det hidden">
+              <h3 class="step-no">STEP 1</h3>
+              <h3 class="step-desc">YOUR INFO</h3>
+            </div>
+          </div>
+          <div class="number-details-flex flex">
+            <button type="button" id="number-two" class="number">2</button>
+            <div class="number-det hidden">
+              <h3 class="step-no">STEP 2</h3>
+              <h3 class="step-desc">SELECT PLAN</h3>
+            </div>
+          </div>
+          <div class="number-details-flex flex">
+            <button type="button" id="number-three" class="number">3</button>
+            <div class="number-det hidden">
+              <h3 class="step-no">STEP 3</h3>
+              <h3 class="step-desc">AD ONS</h3>
+            </div>
+          </div>
+          <div class="number-details-flex flex">
+            <button type="button" id="number-four" class="number">4</button>
+            <div class="number-det hidden">
+              <h3 class="step-no">STEP 4</h3>
+              <h3 class="step-desc">SUMMARY</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- all the content to be displayed is written inside this class main -->
+      <div class="main">
+        <!-- first div is the perspnal info div -->
+        <div class="personal-info">
+          <div class="personal-info-body">
+            <h1 class="heading">Personal info</h1>
+            <p class="parag">
+              Please provide your name, email, address, and phone number.
+            </p>
+            <form class="form-input" id="form-input">
+              <label for="name-input"
+                >Name
+                <input
+                  type="text"
+                  id="name-input"
+                  class="input"
+                  placeholder="e.g. Stephen King"
+                />
+                <span class="error-handling" id="error-handling-name"></span>
+              </label>
+              <label for="email-input"
+                >Email Address
+                <input
+                  type="email"
+                  id="email-input"
+                  class="input"
+                  placeholder="e.g. Stephenking@lorem.com"
+                />
+                <span class="error-handling" id="error-handling-email"></span>
+              </label>
+              <label for="phone-input"
+                >Phone Number
+                <input
+                  type="number"
+                  id="phone-input"
+                  class="input"
+                  placeholder="e.g. +2348169469788"
+                />
+                <span id="error-handling-number" class="error-handling"></span>
+              </label>
+            </form>
+          </div>
+          <div class="buttons first flex">
+            <div></div>
+            <button id="btn-first-step-move" class="btn-next-step">
+              Next Step
+            </button>
+          </div>
+        </div>
+        <!-- second div for the select your plan. -->
+        <div class="select-plan hidden">
+          <div class="select-plan-body">
+            <h1 class="heading">Select your plan</h1>
+            <p class="parag">
+              You have the option of monthly or yearly billing
+            </p>
+            <!-- plan package -->
+            <button class="select-option" id="btn-arcade">
+              <div class="option-flex flex">
+                <div class="arcade-svg">
+                  <img src="./assets/images/icon-arcade.svg" alt="" />
+                </div>
+                <div class="plan-price">
+                  <h2 class="plan-type" id="arcade-plan">Arcade</h2>
+                  <p class="price" id="arcade-montly-price">$9/mo</p>
+                  <div class="yearly-parkage hidden">
+                    <p class="year-price" id="arcade-yearly-price">$90/year</p>
+                    <p class="bonus">2 months free</p>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <button class="select-option" id="btn-advance">
+              <div class="option-flex flex">
+                <div class="arcade-svg">
+                  <img src="./assets/images/icon-advanced.svg" alt="" />
+                </div>
+                <div class="plan-price">
+                  <h2 class="plan-type">Advanced</h2>
+                  <p class="price">$12/mo</p>
+                  <div class="yearly-parkage hidden">
+                    <p class="year-price">$120/year</p>
+                    <p class="bonus">2 months free</p>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <button class="select-option" id="btn-pro">
+              <div class="option-flex flex">
+                <div class="arcade-svg">
+                  <img src="./assets/images/icon-pro.svg" alt="" />
+                </div>
+                <div class="plan-price">
+                  <h2 class="plan-type">Pro</h2>
+                  <p class="price">$15/mo</p>
+                  <div class="yearly-parkage hidden">
+                    <p class="year-price">$150/year</p>
+                    <p class="bonus">2 months free</p>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <!-- toggle between month and year -->
+            <div class="plan-duration">
+              <button class="btn-toggle" id="btn-toggle-month">monthly</button>
+              <div class="toggle-anime">
+                <div class="toggle-white"></div>
+              </div>
+              <button class="btn-toggle" id="btn-toggle-year">Yearly</button>
+            </div>
+          </div>
+          <div class="buttons second flex">
+            <button
+              id="btn-go-back-to-first"
+              class="btn-next-step bg-remove"
+              type="button"
+            >
+              Go back
+            </button>
+            <button
+              id="btn-second-step-move"
+              class="btn-next-step"
+              type="button"
+            >
+              Next Step
+            </button>
+          </div>
+        </div>
+        <!-- 3rd div for the add-ons -->
+        <div class="select-ad-ons hidden">
+          <div class="select-ad-ons-body">
+            <h1 class="heading">Pick add-ons</h1>
+            <p class="parag">Add-ons help enhance your gaming experience</p>
+            <!-- ad-ons package -->
+            <div class="select-option flex">
+              <div class="checkmark">
+                <svg
+                  class="svg-mark"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="9"
+                  viewBox="0 0 12 9"
+                >
+                  <path
+                    fill="none"
+                    stroke="#FFF"
+                    stroke-width="2"
+                    d="m1 4 3.433 3.433L10.866 1"
+                  />
+                </svg>
+              </div>
+              <div class="services">
+                <h3 class="online-ser">Online service</h3>
+                <p class="online-parag">Access to multiplayer games</p>
+              </div>
+              <div class="price-div">
+                <p class="price color-p">+$1/mo</p>
+                <p class="price color-p hidden">$10/yr</p>
+              </div>
+            </div>
+            <div class="select-option flex">
+              <div class="checkmark">
+                <svg
+                  class="svg-mark"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="9"
+                  viewBox="0 0 12 9"
+                >
+                  <path
+                    fill="none"
+                    stroke="#FFF"
+                    stroke-width="2"
+                    d="m1 4 3.433 3.433L10.866 1"
+                  />
+                </svg>
+              </div>
+              <div class="services">
+                <h3 class="online-ser">Larger storage</h3>
+                <p class="online-parag">Extra 1TB of cloud save</p>
+              </div>
+              <div class="price-div">
+                <p class="price color-p">+$2/mo</p>
+                <p class="price color-p hidden">$20/yr</p>
+              </div>
+            </div>
+            <div class="select-option flex">
+              <div class="checkmark">
+                <svg
+                  class="svg-mark"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="9"
+                  viewBox="0 0 12 9"
+                >
+                  <path
+                    fill="none"
+                    stroke=""
+                    stroke-width="2"
+                    d="m1 4 3.433 3.433L10.866 1"
+                  />
+                </svg>
+              </div>
+              <div class="services">
+                <h3 class="online-ser">Customizable profile</h3>
+                <p class="online-parag">Custom theme on your profile</p>
+              </div>
+              <div class="price-div">
+                <p class="price color-p">+$2/mo</p>
+                <p class="price color-p hidden">$20/yr</p>
+              </div>
+            </div>
+            <div class="plan-duration">
+              <button class="btn-toggle" id="btn-toggle-month">monthly</button>
+              <div class="toggle-anime">
+                <div class="toggle-white"></div>
+              </div>
+              <button class="btn-toggle" id="btn-toggle-year">Yearly</button>
+            </div>
+          </div>
+          <div class="buttons third flex">
+            <button
+              id="btn-go-back-to-second"
+              class="btn-next-step bg-remove"
+              type="button"
+            >
+              Go back
+            </button>
+            <button
+              id="btn-third-step-move"
+              class="btn-next-step"
+              type="button"
+            >
+              Next Step
+            </button>
+          </div>
+        </div>
+        <!-- finish up -->
+
+        <div class="select-ad-ons hidden">
+          <div class="select-ad-ons-body">
+            <h1 class="heading">Finishing up</h1>
+            <p class="parag">
+              Double-check everything looks OK before confirming
+            </p>
+            <!-- Accumulation of choices with a different background color -->
+            <div id="services-rendering" class="services-rendering">
+              <div class="plan-render flex">
+                <div class="btn-change-plan">
+                  <h2 class="plan-type">Arcade(Yearly)</h2>
+                  <button class="btn-change" id="btn-change" type="button">
+                    Change
+                  </button>
+                </div>
+                <div class="price-render bold">$90/yr</div>
+              </div>
+              <hr />
+              <!-- the adons  selected will be rendered here and style will be added to it -->
+              <div class="adons-render">
+                <div class="service-price flex">
+                  <h3 class="service-render">Online service</h3>
+                  <p class="price-render">$10/yr</p>
+                </div>
+                <div class="service-price flex">
+                  <h3 class="service-render">Larger Storage</h3>
+                  <p class="price-render">$20/yr</p>
+                </div>
+              </div>
+            </div>
+            <div class="total flex">
+              <h3 class="price-duration">Total(per year)</h3>
+              <p class="price-total">$120/yr</p>
+            </div>
+          </div>
+          <div class="buttons finish flex">
+            <button
+              id="btn-go-back-to-third"
+              class="btn-next-step bg-remove"
+              type="button"
+            >
+              Go back
+            </button>
+            <button
+              id="btn-confirm"
+              class="btn-next-step bg-diff"
+              type="button"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+        <!-- thank you message -->
+        <div class="thank-you-mess hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="80"
+            height="80"
+            viewBox="0 0 80 80"
+          >
+            <g fill="none">
+              <circle cx="40" cy="40" r="40" fill="#F9818E" />
+              <path
+                fill="#E96170"
+                d="M48.464 79.167c.768-.15 1.53-.321 2.288-.515a40.04 40.04 0 0 0 3.794-1.266 40.043 40.043 0 0 0 3.657-1.63 40.046 40.046 0 0 0 12.463-9.898A40.063 40.063 0 0 0 78.3 51.89c.338-1.117.627-2.249.867-3.391L55.374 24.698a21.6 21.6 0 0 0-15.332-6.365 21.629 21.629 0 0 0-15.344 6.365c-8.486 8.489-8.486 22.205 0 30.694l23.766 23.775Z"
+              />
+              <path
+                fill="#FFF"
+                d="M40.003 18.333a21.58 21.58 0 0 1 15.31 6.351c8.471 8.471 8.471 22.158 0 30.63-8.47 8.47-22.156 8.47-30.627 0-8.47-8.472-8.47-22.159 0-30.63a21.594 21.594 0 0 1 15.317-6.35Zm9.865 15c-.316.028-.622.15-.872.344l-12.168 9.13-5.641-5.642c-1.224-1.275-3.63 1.132-2.356 2.356l6.663 6.663c.56.56 1.539.63 2.173.156l13.326-9.995c1.122-.816.43-2.993-.956-3.013a1.666 1.666 0 0 0-.17 0Z"
+              />
+            </g>
+          </svg>
+          <h2 class="thanks">Thank you!</h2>
+          <p class="thanks-message">
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform. If you ever need support, please feel free to emial us
+            at support@loremgaming.com
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
