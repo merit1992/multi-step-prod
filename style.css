@@ -95,7 +95,8 @@ body {
 .thank-you-mess,
 .personal-info-body,
 .select-plan-body,
-.select-ad-ons-body {
+.select-ad-ons-body,
+.confirm-plans-body {
   background-color: var(--White);
   padding: 2em 1em;
   border-radius: 10px;
@@ -165,7 +166,8 @@ label {
 
 /* second phase */
 
-.select-option {
+.select-option,
+.select-adon {
   width: 100%;
   padding: 1em;
   margin-bottom: 0.5em;
@@ -195,7 +197,9 @@ label {
 
 .price,
 .year-price,
-.bonus {
+.bonus,
+.monthly-price,
+.yearly-price {
   color: var(--Cool-gray);
   font-size: 1rem;
   font-weight: 500;
@@ -232,6 +236,8 @@ label {
   background-color: var(--White);
 }
 
+.btn-toggle-year,
+.btn-toggle-month,
 .btn-toggle {
   border: none;
   font-size: 1rem;
@@ -247,7 +253,7 @@ label {
 
 /* third section */
 
-.select-option {
+.select-adon {
   border: 1px solid var(--Purplish-blue);
 }
 
@@ -262,9 +268,14 @@ label {
   height: 10px;
 }
 
+.svg-mark path {
+  stroke: var(--Purplish-blue);
+}
+
 .services {
   font-size: 0.8rem;
   margin: 0 0.4em;
+  text-align: left;
   width: 65%;
 }
 
@@ -352,7 +363,7 @@ hr {
 }
 
 /* Thank you section */
-.thank-you-mess {
+.thank-you-page {
   padding: 5em 1em;
   text-align: center;
 }

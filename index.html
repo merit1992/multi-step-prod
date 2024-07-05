@@ -164,11 +164,15 @@
             </button>
             <!-- toggle between month and year -->
             <div class="plan-duration">
-              <button class="btn-toggle" id="btn-toggle-month">monthly</button>
+              <button class="btn-toggle-month" onclick="toggleMonth()">
+                monthly
+              </button>
               <div class="toggle-anime">
                 <div class="toggle-white"></div>
               </div>
-              <button class="btn-toggle" id="btn-toggle-year">Yearly</button>
+              <button class="btn-toggle-year" onclick="toggleYear()">
+                Yearly
+              </button>
             </div>
           </div>
           <div class="buttons second flex">
@@ -187,6 +191,7 @@
               Next Step
             </button>
           </div>
+          <div id="result-test"></div>
         </div>
         <!-- 3rd div for the add-ons -->
         <div class="select-ad-ons hidden">
@@ -194,7 +199,7 @@
             <h1 class="heading">Pick add-ons</h1>
             <p class="parag">Add-ons help enhance your gaming experience</p>
             <!-- ad-ons package -->
-            <div class="select-option flex">
+            <button class="select-adon flex">
               <div class="checkmark">
                 <svg
                   class="svg-mark"
@@ -204,8 +209,9 @@
                   viewBox="0 0 12 9"
                 >
                   <path
+                    class="path-class"
                     fill="none"
-                    stroke="#FFF"
+                    stroke="#fff"
                     stroke-width="2"
                     d="m1 4 3.433 3.433L10.866 1"
                   />
@@ -216,11 +222,11 @@
                 <p class="online-parag">Access to multiplayer games</p>
               </div>
               <div class="price-div">
-                <p class="price color-p">+$1/mo</p>
-                <p class="price color-p hidden">$10/yr</p>
+                <p class="monthly-price color-p">$1/mo</p>
+                <p class="yearly-price color-p hidden">$10/yr</p>
               </div>
-            </div>
-            <div class="select-option flex">
+            </button>
+            <button class="select-adon flex">
               <div class="checkmark">
                 <svg
                   class="svg-mark"
@@ -230,8 +236,9 @@
                   viewBox="0 0 12 9"
                 >
                   <path
+                    class="path-class"
                     fill="none"
-                    stroke="#FFF"
+                    stroke="#fff"
                     stroke-width="2"
                     d="m1 4 3.433 3.433L10.866 1"
                   />
@@ -242,11 +249,11 @@
                 <p class="online-parag">Extra 1TB of cloud save</p>
               </div>
               <div class="price-div">
-                <p class="price color-p">+$2/mo</p>
-                <p class="price color-p hidden">$20/yr</p>
+                <p class="monthly-price color-p">$2/mo</p>
+                <p class="yearly-price color-p hidden">$20/yr</p>
               </div>
-            </div>
-            <div class="select-option flex">
+            </button>
+            <button class="select-adon flex">
               <div class="checkmark">
                 <svg
                   class="svg-mark"
@@ -256,8 +263,9 @@
                   viewBox="0 0 12 9"
                 >
                   <path
+                    class="path-class"
                     fill="none"
-                    stroke=""
+                    stroke="#fff"
                     stroke-width="2"
                     d="m1 4 3.433 3.433L10.866 1"
                   />
@@ -268,16 +276,29 @@
                 <p class="online-parag">Custom theme on your profile</p>
               </div>
               <div class="price-div">
-                <p class="price color-p">+$2/mo</p>
-                <p class="price color-p hidden">$20/yr</p>
+                <p class="monthly-price color-p">$3/mo</p>
+                <p class="yearly-price color-p hidden">$30/yr</p>
               </div>
-            </div>
+            </button>
+            <!-- toggle -->
             <div class="plan-duration">
-              <button class="btn-toggle" id="btn-toggle-month">monthly</button>
+              <button
+                class="btn-toggle"
+                id="btn-toggle-month"
+                onclick="toggleMonth()"
+              >
+                monthly
+              </button>
               <div class="toggle-anime">
                 <div class="toggle-white"></div>
               </div>
-              <button class="btn-toggle" id="btn-toggle-year">Yearly</button>
+              <button
+                class="btn-toggle"
+                id="btn-toggle-year"
+                onclick="toggleYear()"
+              >
+                Yearly
+              </button>
             </div>
           </div>
           <div class="buttons third flex">
@@ -299,8 +320,8 @@
         </div>
         <!-- finish up -->
 
-        <div class="select-ad-ons hidden">
-          <div class="select-ad-ons-body">
+        <div class="confirm-plans hidden">
+          <div class="confirm-plans-body">
             <h1 class="heading">Finishing up</h1>
             <p class="parag">
               Double-check everything looks OK before confirming
@@ -308,30 +329,23 @@
             <!-- Accumulation of choices with a different background color -->
             <div id="services-rendering" class="services-rendering">
               <div class="plan-render flex">
-                <div class="btn-change-plan">
-                  <h2 class="plan-type">Arcade(Yearly)</h2>
+                <div class="btn-change-plan" id="render-plan">
+                  <h2 class="plan-type" id="plan-type"></h2>
                   <button class="btn-change" id="btn-change" type="button">
                     Change
                   </button>
                 </div>
-                <div class="price-render bold">$90/yr</div>
+                <div class="price-render bold" id="finish-plan-price"></div>
               </div>
               <hr />
               <!-- the adons  selected will be rendered here and style will be added to it -->
               <div class="adons-render">
-                <div class="service-price flex">
-                  <h3 class="service-render">Online service</h3>
-                  <p class="price-render">$10/yr</p>
-                </div>
-                <div class="service-price flex">
-                  <h3 class="service-render">Larger Storage</h3>
-                  <p class="price-render">$20/yr</p>
-                </div>
+                <div class="service-price flex"></div>
               </div>
             </div>
             <div class="total flex">
               <h3 class="price-duration">Total(per year)</h3>
-              <p class="price-total">$120/yr</p>
+              <p class="price-total"></p>
             </div>
           </div>
           <div class="buttons finish flex">
@@ -352,7 +366,7 @@
           </div>
         </div>
         <!-- thank you message -->
-        <div class="thank-you-mess hidden">
+        <div class="thank-you-page hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="80"
