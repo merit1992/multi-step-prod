@@ -58,9 +58,9 @@ btnFirstStepMove.addEventListener("click", (e) => {
   const numberInputValue = numberInput.value;
 
   if (!nameInputValue || !emailInputValue || !numberInputValue) {
-    errorHandlingName.textContent = "name is required";
-    errorHandlingEmail.textContent = "email is required";
-    errorHandlingNumber.textContent = "phone number is required";
+    errorHandlingName.textContent = "Name is required";
+    errorHandlingEmail.textContent = "Email is required";
+    errorHandlingNumber.textContent = "Phone number is required";
   } else {
     personalInfo.classList.add("hidden");
     selectPlan.classList.remove("hidden");

@@ -164,6 +164,12 @@ label {
   cursor: pointer;
 }
 
+.error-handling {
+  color: brown;
+  margin-top: -0.5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 /* second phase */
 
 .select-option,
